@@ -1,6 +1,6 @@
 <?php
 
-namespace Mile\Repository;
+namespace Mile\Common\Repository;
 
 use Mile\Common\Model\CommonModel;
 

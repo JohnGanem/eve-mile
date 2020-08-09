@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Unit\Common;
 
 use DateTime;
@@ -7,7 +9,7 @@ use Exception;
 use InvalidArgumentException;
 use LogicException;
 use Mile\Common\ValueObject\ArrayValue;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class ArrayValueTest extends TestCase
 {
@@ -103,8 +105,7 @@ class ArrayValueTest extends TestCase
             ->getMockForAbstractClass();
 
         assert($arrayValue instanceof ArrayValue);
-        $arrayValue->setMaxDeep(2);
-        $arrayValue->setModelClass(DateTime::class)->append([new DateTime(), [new DateTime(), new DateTime()]]);
+        $arrayValue->setModelClass(DateTime::class)->append([new DateTime(), [new DateTime(), new DateTime()]], 2);
 
         $this->assertIsIterable($arrayValue);
         $this->assertCount(3, $arrayValue);

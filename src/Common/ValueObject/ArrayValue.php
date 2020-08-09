@@ -8,7 +8,6 @@ abstract class ArrayValue extends ArrayObject
 {
 
     protected ?string $modelClass = null;
-    protected int $maxDeep = 1;
 
     private function __construct(string $modelClass)
     {
@@ -29,12 +28,12 @@ abstract class ArrayValue extends ArrayObject
         throw new \InvalidArgumentException("Value must be a {$this->modelClass}");
     }
 
-    final public function append($value, int $deep = 1)
+    final public function append($value, int $maxDeep = 1, int $deep = 1)
     {
-        if ($deep <= $this->maxDeep && is_array($value)) {
+        if ($deep <= $maxDeep && is_array($value)) {
             $newDeep = ++$deep;
             foreach ($value as $single_value) {
-                $this->append($single_value, $newDeep);
+                $this->append($single_value, $maxDeep, $newDeep);
             }
         } else {
             parent::append($value);
@@ -49,18 +48,6 @@ abstract class ArrayValue extends ArrayObject
     public function setModelClass(string $modelClass)
     {
         $this->modelClass = $modelClass;
-
-        return $this;
-    }
-
-    public function getMaxDeep(): int
-    {
-        return $this->maxDeep;
-    }
-
-    public function setMaxDeep(int $maxDeep)
-    {
-        $this->maxDeep = $maxDeep;
 
         return $this;
     }

@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Unit\Common;
 
 use Mile\Common\ValueObject\FloatValue;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 use TypeError;
 
 class FloatValueTest extends TestCase
@@ -28,18 +30,18 @@ class FloatValueTest extends TestCase
     public function test_it_doesnt_accept_string()
     {
         $this->expectException(TypeError::class);
-        $floatValue = $this->getMockForAbstractClass(FloatValue::class, ['test']);
+        $this->getMockForAbstractClass(FloatValue::class, ['test']);
     }
 
     public function test_it_doesnt_accept_null()
     {
         $this->expectException(TypeError::class);
-        $floatValue = $this->getMockForAbstractClass(FloatValue::class, [null]);
+        $this->getMockForAbstractClass(FloatValue::class, [null]);
     }
 
     public function test_it_doesnt_accept_empty()
     {
         $this->expectException(TypeError::class);
-        $floatValue = $this->getMockForAbstractClass(FloatValue::class, ['']);
+        $this->getMockForAbstractClass(FloatValue::class, ['']);
     }
 }

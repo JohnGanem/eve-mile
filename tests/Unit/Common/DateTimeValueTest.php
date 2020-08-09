@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Unit\Common;
 
 use InvalidArgumentException;
 use Mile\Common\ValueObject\DateTimeValue;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class DateTimeValueTest extends TestCase
 {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Mile\Common\ValueObject;
 
 abstract class CommonValueObject
@@ -10,5 +12,4 @@ abstract class CommonValueObject
     {
         return ($this->value() === $anotherObject->value());
     }
-
 }

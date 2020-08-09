@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Unit\Common;
 
 use Mile\Common\ValueObject\CommonValueObject;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class CommonValueObjectTest extends TestCase
 {
@@ -23,7 +25,8 @@ class CommonValueObjectTest extends TestCase
         $this->assertFalse($intValue->equalsTo($anotherIntValue));
     }
 
-    public function test_it_does_strict_comparison_for_equals_method() {
+    public function test_it_does_strict_comparison_for_equals_method()
+    {
         $intValue = $this->getMockForAbstractClass(CommonValueObject::class);
         $intValue->method('value')->willReturn(1);
         $stringValue = $this->getMockForAbstractClass(CommonValueObject::class);

@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Unit\Common;
 
 use Mile\Common\ValueObject\StringValue;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 use TypeError;
 
 class StringValueTest extends TestCase

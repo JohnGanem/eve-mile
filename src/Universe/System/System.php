@@ -2,10 +2,10 @@
 
 namespace Mile\Universe\System;
 
-use Mile\Common\Model\CommonModel;
+use Mile\Common\Entity\CommonEntity;
 use Mile\Universe\Constellation\ConstellationId;
 
-final class System extends CommonModel
+final class System extends CommonEntity
 {
     private SystemId $systemId;
     private SystemName $systemName;

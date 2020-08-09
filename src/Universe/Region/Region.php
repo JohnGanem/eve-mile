@@ -2,10 +2,10 @@
 
 namespace Mile\Universe\Region;
 
-use Mile\Common\Model\CommonModel;
+use Mile\Common\Entity\CommonEntity;
 use Mile\Universe\System\SystemArray;
 
-final class Region extends CommonModel
+final class Region extends CommonEntity
 {
     private RegionId $regionId;
 

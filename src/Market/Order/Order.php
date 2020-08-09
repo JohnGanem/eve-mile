@@ -2,11 +2,11 @@
 
 namespace Mile\Market\Order;
 
-use Mile\Common\Model\CommonModel;
+use Mile\Common\Entity\CommonEntity;
 use Mile\Universe\Station\StationId;
 use Mile\Universe\System\SystemId;
 
-abstract class Order extends CommonModel
+abstract class Order extends CommonEntity
 {
     private OrderId $orderId;
     private OrderDuration $orderDuration;

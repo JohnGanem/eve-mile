@@ -2,9 +2,9 @@
 
 namespace Mile\Universe\Item;
 
-use Mile\Common\Model\CommonModel;
+use Mile\Common\Entity\CommonEntity;
 
-final class Item extends CommonModel
+final class Item extends CommonEntity
 {
     private $itemId;
     private $itemName;

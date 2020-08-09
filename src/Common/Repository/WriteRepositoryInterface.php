@@ -2,11 +2,11 @@
 
 namespace Mile\Common\Repository;
 
-use Mile\Common\Model\CommonModel;
+use Mile\Common\Entity\CommonEntity;
 
 interface WriteRepositoryInterface
 {
-    public function save(CommonModel $commonClass);
+    public function save(CommonEntity $commonEntity);
 
-    public function find(int $id) : CommonModel;
+    public function find(int $id) : CommonEntity;
 }

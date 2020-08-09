@@ -2,10 +2,10 @@
 
 namespace Mile\Universe\Station;
 
-use Mile\Common\Model\CommonModel;
+use Mile\Common\Entity\CommonEntity;
 use Mile\Universe\System\SystemId;
 
-final class Station extends CommonModel
+final class Station extends CommonEntity
 {
     private StationId $stationId;
     private StationName $stationName;

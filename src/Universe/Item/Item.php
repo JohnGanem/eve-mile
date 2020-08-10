@@ -6,15 +6,17 @@ use Mile\Common\Entity\CommonEntity;
 
 final class Item extends CommonEntity
 {
-    private $itemId;
-    private $itemName;
-    private $itemIcon;
+    private ItemId $itemId;
+    private ItemName $itemName;
+    private ItemIcon $itemIcon;
+    private ItemSize $itemSize;
 
-    public function __construct(ItemId $itemId, ItemName $itemName, ItemIcon $itemIcon)
+    public function __construct(ItemId $itemId, ItemName $itemName, ItemIcon $itemIcon, ItemSize $itemSize)
     {
         $this->itemId = $itemId;
         $this->itemName = $itemName;
         $this->itemIcon = $itemIcon;
+        $this->itemSize = $itemSize;
     }
 
     public function getItemId(): ItemId
@@ -49,6 +51,18 @@ final class Item extends CommonEntity
     public function setItemIcon(ItemIcon $itemIcon)
     {
         $this->itemIcon = $itemIcon;
+
+        return $this;
+    }
+
+    public function getItemSize(): ItemSize
+    {
+        return $this->itemSize;
+    }
+
+    public function setItemSize(ItemSize $itemSize)
+    {
+        $this->itemSize = $itemSize;
 
         return $this;
     }
